@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+//option java_package = "io.grpc.examples";
+
+package helloworld;
+
+// The greeter service definition.
+service Greeter {
+    // Sends a greeting
+    rpc SayHello (HelloRequest) returns (HelloReply) {}
+    //添加ZHQTest方法
+    //形参 TestRequest对象
+    //返回值 TestReply对象
+    rpc ZHQTest (TestRequest) returns (TestReply){}
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+    string name = 1;
+    int32 age = 2;
+}
+
+// The response message containing the greetings
+message HelloReply {
+    string message = 1;
+    int32 ageMessage = 2;
+
+}
+message TestRequest {
+    repeated string users = 1 ;
+}
+message TestReply{
+    repeated string users = 1 ;
+}
